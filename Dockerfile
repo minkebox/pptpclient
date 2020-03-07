@@ -1,7 +1,7 @@
 FROM alpine:3.11
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories ;\
-    apk add pptpclient ppp dnsmasq miniupnpd ;\
+    apk add perl pptpclient ppp dnsmasq miniupnpd ;\
     rm -rf /etc/dnsmasq.conf /etc/miniupnpd
 
 COPY root/ /
