@@ -6,6 +6,12 @@
   actions: [
     {
       type: `EditEnvironment`,
+      description: `Enter your VPN server name`,
+      name: `SERVER`,
+      placeholder: `Server Name`
+    },
+    {
+      type: `EditEnvironment`,
       description: `Enter your VPN username`,
       name: `USER`,
       placeholder: `Username`
@@ -15,18 +21,12 @@
       description: `Enter your VPN password`,
       name: `PASSWORD`,
       placeholder: `Password`
-    },
-    {
-      type: `EditEnvironment`,
-      description: `Enter your VPN server name`,
-      name: `SERVER`,
-      placeholder: `Server Name`
     }
   ],
   properties: [
     {
       type: `Feature`,
-      name: `+NET_ADMIN`
+      name: `privileged`
     },
     {
       type: `Feature`,
