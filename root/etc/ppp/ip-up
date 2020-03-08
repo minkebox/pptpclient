@@ -34,6 +34,9 @@ iptables -t nat -A POSTROUTING -j MASQUERADE -o ${HOME_INTERFACE}
 # Default gateway
 route add default gw ${EXTERNAL_REMOTE_IP} dev ${EXTERNAL_INTERFACE}
 
+# Increase txqueue length
+ifconfig ${EXTERNAL_INTERFACE} txqueuelen 1000
+
 # dns
 cp /etc/resolv.conf /etc/dnsmasq_resolv.conf
 #IFS=
