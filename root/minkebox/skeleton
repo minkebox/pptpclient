@@ -5,6 +5,10 @@
   tags: [ 'VPN', 'Security', 'Networking' ],
   actions: [
     {
+      type: `Header`
+      title: `Configure`
+    },
+    {
       type: `EditEnvironment`,
       description: `Enter your VPN server name`,
       name: `SERVER`,
@@ -21,6 +25,36 @@
       description: `Enter your VPN password`,
       name: `PASSWORD`,
       placeholder: `Password`
+    },
+    {
+      type: `Header`,
+      title: `Advanced`,
+      visible: `property.Advanced`
+    },
+    {
+      type: `EditEnvironmentAsCheckbox`,
+      name: `PAP`,
+      description: `Enable PAP authentication`
+    },
+    {
+      type: `EditEnvironmentAsCheckbox`,
+      name: `EAP`,
+      description: `Enable EAP authentication`
+    },
+    {
+      type: `EditEnvironmentAsCheckbox`,
+      name: `CHAP`,
+      description: `Enable CHAP authentication`
+    },
+    {
+      type: `EditEnvironmentAsCheckbox`,
+      name: `MSCHAP`,
+      description: `Enable MS-CHAP authentication`
+    },
+    {
+      type: `EditEnvironmentAsCheckbox`,
+      name: `MPPE`,
+      description: `Enable encryption`
     }
   ],
   properties: [
@@ -43,6 +77,31 @@
     {
       type: `Environment`,
       name: `SERVER`
+    },
+    {
+      type: `Environment`,
+      name: `PAP`,
+      defaultValue: false
+    },
+    {
+      type: `Environment`,
+      name: `CHAP`,
+      defaultValue: false
+    },
+    {
+      type: `Environment`,
+      name: `EAP`,
+      defaultValue: false
+    },
+    {
+      type: `Environment`,
+      name: `MSCHAP`,
+      defaultValue: true
+    },
+    {
+      type: `Environment`,
+      name: `MPPE`,
+      defaultValue: true
     },
     {
       type: `Directory`,
