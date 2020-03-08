@@ -14,8 +14,8 @@ refuse-eap
 refuse-chap
 __EOF__
 
-#/usr/sbin/pppd call vpn debug dump logfd 2 nodetach persist
-/usr/sbin/pppd call vpn persist
+#/usr/sbin/pppd call vpn defaultroute debug dump logfd 2 nodetach persist
+/usr/sbin/pppd call vpn defaultroute persist
 
 trap "killall sleep pptpsetup perl pppd pptp dnsmasq miniupnpd; exit" TERM INT
 
