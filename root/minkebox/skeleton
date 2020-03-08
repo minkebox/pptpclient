@@ -5,7 +5,7 @@
   tags: [ 'VPN', 'Security', 'Networking' ],
   actions: [
     {
-      type: `Header`
+      type: `Header`,
       title: `Configure`
     },
     {
