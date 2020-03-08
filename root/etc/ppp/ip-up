@@ -32,7 +32,8 @@ iptables -t nat -A POSTROUTING -j MASQUERADE -o ${INTERNAL_INTERFACE}
 iptables -t nat -A POSTROUTING -j MASQUERADE -o ${HOME_INTERFACE}
 
 # Default gateway
-route add default gw ${EXTERNAL_REMOTE_IP} dev ${EXTERNAL_INTERFACE}
+ip route add 0.0.0.0/1 dev ${EXTERNAL_INTERFACE}
+ip route add 128.0.0.0/1 dev ${EXTERNAL_INTERFACE}
 
 # Increase txqueue length
 ifconfig ${EXTERNAL_INTERFACE} txqueuelen 1000
