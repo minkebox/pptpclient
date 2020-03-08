@@ -31,6 +31,9 @@ iptables -t nat -A POSTROUTING -j MASQUERADE -o ${EXTERNAL_INTERFACE}
 iptables -t nat -A POSTROUTING -j MASQUERADE -o ${INTERNAL_INTERFACE}
 iptables -t nat -A POSTROUTING -j MASQUERADE -o ${HOME_INTERFACE}
 
+# Default gateway
+route add default gw ${EXTERNAL_REMOTE_IP} dev ${EXTERNAL_INTERFACE}
+
 # dns
 cp /etc/resolv.conf /etc/dnsmasq_resolv.conf
 #IFS=
