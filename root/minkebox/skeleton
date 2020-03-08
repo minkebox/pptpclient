@@ -1,6 +1,6 @@
 {
   name: `PPTP`,
-  description: `PPTP client for use with various PPTP servers`,
+  description: `PPTP client to connect to PPTP servers`,
   image: `registry.minkebox.net/minkebox/pptpclient`,
   tags: [ 'VPN', 'Security', 'Networking' ],
   actions: [
