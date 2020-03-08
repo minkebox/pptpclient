@@ -8,7 +8,7 @@ name "${USER}"
 password "${PASSWORD}"
 remotename PPTP
 ipparam "vpn"
-require-mppe-128
+#require-mppe-128
 refuse-pap
 refuse-eap
 refuse-chap
