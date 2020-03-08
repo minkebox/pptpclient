@@ -3,7 +3,6 @@
 /bin/mknod /dev/ppp c 108 0
 
 cat > /etc/ppp/peers/vpn << __EOF__
-lock
 pty "pptp ${SERVER} --nolaunchpppd"
 name "${USER}"
 password "${PASSWORD}"
@@ -16,7 +15,7 @@ refuse-chap
 __EOF__
 
 #/usr/sbin/pppd call vpn debug dump logfd 2 nodetach persist
-/usr/sbin/pppd call vpn
+/usr/sbin/pppd call vpn persist
 
 trap "killall sleep pptpsetup perl pppd pptp dnsmasq miniupnpd; exit" TERM INT
 
