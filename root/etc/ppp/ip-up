@@ -1,9 +1,9 @@
 #! /bin/sh
 
-HOME_INTERFACE=${__HOME_INTERFACE}
-INTERNAL_INTERFACE=${__PRIVATE_INTERFACE}
-EXTERNAL_INTERFACE=$1
-EXTERNAL_REMOTE_IP=$5
+HOME_INTERFACE="eth0"
+INTERNAL_INTERFACE="eth1"
+EXTERNAL_INTERFACE="ppp0"
+EXTERNAL_REMOTE_IP="${4}"
 
 # Create MINIUPNPD lists.
 iptables -t nat    -N MINIUPNPD
@@ -22,7 +22,7 @@ iptabels -t nat    -F MINIUPNPD-POSTROUTING
 # Allow traffic in and out if we've started a connection out
 iptables -A INPUT  -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT -i ${HOME_INTERFACE}
 # Any traffic which arrives on the home network is immediately forwarded to the other end of the private
-# network except if its traffic for the OpenVPN.
+# network except if its traffic for the VPN itself.
 iptables -t nat -A PREROUTING --from-source ${EXTERNAL_REMOTE_IP} -j ACCEPT -i ${HOME_INTERFACE}
 iptables -t nat -A PREROUTING  -j DNAT --to-destination ${EXTERNAL_REMOTE_IP} -i ${HOME_INTERFACE}
 
