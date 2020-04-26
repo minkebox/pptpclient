@@ -41,25 +41,25 @@
     {
       type: `EditEnvironmentAsCheckbox`,
       name: `EAP`,
-      description: `Enable EAP authentication`
+      description: `Enable EAP authentication`,
       initValue: false
     },
     {
       type: `EditEnvironmentAsCheckbox`,
       name: `CHAP`,
-      description: `Enable CHAP authentication`
+      description: `Enable CHAP authentication`,
       initValue: false
     },
     {
       type: `EditEnvironmentAsCheckbox`,
       name: `MSCHAP`,
-      description: `Enable MS-CHAP authentication`
+      description: `Enable MS-CHAP authentication`,
       initValue: true
     },
     {
       type: `EditEnvironmentAsCheckbox`,
       name: `MPPE`,
-      description: `Enable encryption`
+      description: `Enable encryption`,
       initValue: true
     }
   ],
