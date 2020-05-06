@@ -44,6 +44,10 @@ __EOF__
 #/usr/sbin/pppd call vpn debug dump logfd 2 nodetach persist
 /usr/sbin/pppd call vpn persist
 
+# Monitoring
+iptables -I FORWARD -o ppp0 -j TX
+iptables -I FORWARD -i ppp0 -j RX
+
 trap "killall sleep pptpsetup perl pppd pptp dnsmasq miniupnpd; exit" TERM INT
 
 sleep 2147483647d &
